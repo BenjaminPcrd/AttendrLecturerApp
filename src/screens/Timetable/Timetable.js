@@ -3,7 +3,9 @@ import React, { useEffect, useState, useCallback } from "react"
 import {
     FlatList,
     View,
-    RefreshControl
+    RefreshControl,
+    LayoutAnimation,
+    UIManager
 } from 'react-native'
 
 import { 
@@ -18,6 +20,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import AsyncStorage from '@react-native-community/async-storage'
 
+UIManager.setLayoutAnimationEnabledExperimental(true)
 function getTimetableData() {
     const url = "http://bepicard.com/timetable"
     return new Promise((resolve, reject) => {
@@ -100,7 +103,7 @@ const Timetable = ({ navigation }) => {
             }
         }
     }
-    
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
     return (
         <Container style={{paddingLeft: 5, paddingRight: 5}}>
             <FlatList
