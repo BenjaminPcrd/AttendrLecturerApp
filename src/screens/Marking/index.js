@@ -67,18 +67,18 @@ const Marking = ({ navigation, route }) => {
     const startAttendance = () => {
         setMarking(true)
         LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
-        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907001 ? {...item, marked: true} : item)), 1000)
+        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907008 ? {...item, marked: true} : item)), 1000)
         setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907005 ? {...item, marked: true} : item)), 2000)
         setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907003 ? {...item, marked: true} : item)), 2500)
-        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907002 ? {...item, marked: true} : item)), 2700)
-        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907008 ? {...item, marked: true} : item)), 4500)
+        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907004 ? {...item, marked: true} : item)), 2700)
+        setTimeout(() => setStudents(prevStudents => prevStudents.map(item => item.id === 1907001 ? {...item, marked: true} : item)), 4500)
     }
 
     const stopAttendance = () => {
         setMarking(false)
         LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
     }
-    console.log(route.params.item)
+    
     return (
         <Container>
             <Header hasTabs>
